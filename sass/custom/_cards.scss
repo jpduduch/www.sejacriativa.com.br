@@ -1,0 +1,133 @@
+#landing-page{	
+	.card-container{
+		@extend %centraliza-vertical;
+		display: inline-block;
+		margin-top: -50px;
+		width: 100%;
+		padding: 2rem;
+		transform: translate(100vw, -50%);
+		transition: .5s;
+
+		&:nth-child(1){
+			transform: translateY(-50%);
+		}
+	}
+
+	.logo-container{
+		@extend %max-w-416;
+		padding: 16px;
+		margin-bottom: -5rem;
+		transform: rotate(-2deg);
+
+		@media #{$small-and-down}{
+			margin-bottom: -1rem;
+			transform: rotate(0);
+		}
+	}
+
+	#card-inicial, #card-login, #nova-usuaria{
+		@extend %max-w-416, %centraliza-horizontal, %branco-para-preto, .sombra-profunda-azul, %no-select;
+		cursor: pointer;
+		background-color: $branco-sc;
+		padding: 2rem 1rem 1.5rem 1rem;
+		@media #{$medium-and-up}{
+			padding: 3rem;
+			padding-bottom: 1.5rem;
+			border-radius: 2rem;
+		}
+
+		border-radius: 1.5rem;
+		
+		.voltar-inicio{
+			width: 2.5rem;
+			height: 2.5rem;
+			padding: 0.5rem;
+			border-radius: 50%;
+			background-color: $rosa-sc;
+			display: block;
+			position: absolute;
+			top: 0;
+
+			img{
+				margin: auto;
+			}
+		}
+
+		h1, h2, legend{
+			font-size: 1.5rem;
+			font-family: Pacifico;
+			color: $rosa-sc;
+			font-weight: $light;
+			text-align: center;
+			margin: 0 2.5rem;
+			margin-bottom: 1.5rem;
+			line-height: 1.5rem;
+		}
+
+		a{
+			h2{
+				text-transform: capitalize;
+				color: $rosa-sc;
+				font-size: 1.5rem;
+				margin-top: 1.5rem;
+			}
+		}
+
+		p{
+			text-align: center;
+			color: $rosa-sc;
+			font-family: Pacifico;
+			font-size: 1.5rem;
+			font-weight: $light;
+
+			span{
+				color: $azul-sc;
+				vertical-align: text-bottom;
+				margin: 0.5rem;
+			}
+		}
+
+		input[type=submit]{
+			margin-top: 2rem;
+		}
+	}
+
+	#nova-usuaria{
+		@extend %max-w-480;
+		padding: 1rem;
+		padding-top: 3rem;
+		form{
+			padding: 0;
+		}
+	}
+}
+
+// container responsivo para cards
+
+// .container-cards{
+// 	display: block;
+// 	margin: 0 auto;
+// 	// media queries para deixar os cards sempre centralizados na tela
+	
+// 	width: 1338px;
+
+// 	@media screen and (max-width: 1279px){
+// 		width: 533px;
+// 	}
+// 	@media screen and (min-width: 1280px) and (max-width: 1499px){
+// 		width: 801px;
+// 	}
+// 	@media screen and (min-width: 1500px) and (max-width: 1920px){
+// 		width: 1070px;
+// 	}
+
+// 	.card-montagem{
+// 		width: 15.5rem;
+// 		background-color: #fff;
+// 		display: inline-block;
+// 		background-image: linear-gradient(rgba(0,0,0,0.00) 28%, rgba(0,0,0,0.05) 100%);
+// 		border: 1px solid $branco-sc;
+// 		border-radius: 2rem;
+// 	}
+
+// }

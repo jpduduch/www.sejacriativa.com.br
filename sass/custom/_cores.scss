@@ -1,0 +1,134 @@
+// @import "custom/variaveis_mixins_e_placeholders";
+
+// .rosa {
+// 	color: $rosa-sc;
+// 	&-bg {
+// 		background: $rosa-sc;
+// 	}
+// }
+
+// .rosaclaro {
+// 	color: $rosaclaro-sc;
+// 	&-bg {
+// 		background: $rosaclaro-sc;
+// 	}
+// }
+
+// .azul {
+// 	color: $azul-sc;
+// 	&-bg {
+// 		background: $azul-sc;
+// 	}
+// }
+
+// .azulescuro {
+// 	color: $azulescuro-sc;
+// 	&-bg {
+// 		background: $azulescuro-sc;
+// 	}
+// }
+
+// .violeta {
+// 	color: $violeta-sc;
+// 	&-bg {
+// 		background: $violeta-sc;
+// 	}
+// }
+
+// .amarelo {
+// 	color: $amarelo-sc;
+// 	&-bg {
+// 		background: $amarelo-sc;
+// 	}
+// }
+
+// .cinza {
+// 	color: $cinza-sc;
+// 	&-bg {
+// 		background: $cinza-sc;
+// 	}
+// }
+
+// .branco {
+// 	color: $branco-sc;
+// 	&-bg {
+// 		background: $branco-sc;
+// 	}
+// }
+
+// .verde {
+// 	color: $verde-sc;
+// 	&-bg {
+// 		background: $verde-sc;
+// 	}
+// 	&-bg-opaco {
+// 		background: rgba(0, 199, 164, .1);
+// 	}
+// }
+
+// .vermelho {
+// 	color: $vermelho-sc;
+// 	&-bg {
+// 	background: $vermelho-sc;
+// 	}
+// }
+
+// .no-bg {
+// 	background: transparent !important;
+// }
+
+// gradients
+
+%branco-para-preto{
+	background-image: linear-gradient(rgba(0,0,0,0.00) 28%, rgba(0,0,0,0.05) 100%);
+	border: 1px solid #FFFFFF;
+	&:hover{
+		background-color: #fff;
+	}
+}
+
+// sombras projetadas
+
+.sombra-profunda{
+	box-shadow: $sombra-profunda-off !important;
+	overflow: visible;
+	&:hover{
+		box-shadow: $sombra-profunda-on !important;
+	}
+
+	&-violeta{
+		box-shadow: $sombra-profunda-violeta-off !important;
+		overflow: visible;
+		&:hover{
+			box-shadow: $sombra-profunda-violeta-on !important;
+		}
+
+	}
+
+	&-azul{
+		box-shadow: $sombra-profunda-azul-off !important;
+		overflow: visible;
+		&:hover{
+			box-shadow: $sombra-profunda-azul-on !important;
+		}
+
+	}
+
+	&-amarela{
+		box-shadow: $sombra-profunda-amarela-off !important;
+		overflow: visible;
+		&:hover{
+			box-shadow: $sombra-profunda-amarela-on !important;
+		}
+
+	}
+
+	&-rosa{
+		box-shadow: $sombra-profunda-rosa-off !important;
+		overflow: visible;
+		&:hover{
+			box-shadow: $sombra-profunda-rosa-on !important;
+		}
+
+	}
+}

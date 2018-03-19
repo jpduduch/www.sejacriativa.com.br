@@ -1,0 +1,110 @@
+.bloco-item-pedido:last-child{
+	border-bottom: none !important;
+}
+
+#subtotal-container{
+	position: absolute;
+	right: 1rem;
+	top: -1rem;
+	width: 20rem;
+	border-radius: 0px 0px 1rem 1rem;
+	overflow: hidden;
+	pointer-events: all;
+	transform: translateY(-4.5rem);
+
+	&.active{
+		transition: .1s;
+		transform: translateY(0) !important;
+	}
+
+	#itens{
+		max-height: 90vh;
+		overflow: scroll;
+		position: relative;
+
+		.bloco-item-pedido{
+			background-color: $branco-sc;
+			color: $cinza-sc;
+			padding: 1.5rem 2rem;
+			padding-top: 2rem;
+			text-transform: uppercase;
+			line-height: 1.5rem;
+			border-top: 2px dashed $azul-sc;
+
+			&:first-child{
+				border: none;
+			}
+		}
+	}
+
+	h6{
+		text-align: left;
+	}
+
+	p{
+		margin-top: 0;
+		&:last-child{
+			line-height: 3.5rem;
+		}
+	}
+
+	span{
+		color: $verde-sc;
+		position: absolute;
+		right: 1.5rem;
+
+		&.total-item{
+			color: $rosa-sc;
+			font-size: 1.5rem;
+			width: initial;
+			line-height: 3rem;
+		}
+	}
+
+	.subtotal{
+		position: relative;
+		bottom: 0;
+		width: 100%;
+		height: 4.5rem;
+		background-color: $verde-sc;
+		padding: 1rem 1.5rem;
+		pointer-events: all;
+		text-align: right;
+		background-image: linear-gradient(90deg, rgba($verde-sc ,0.00) 0%, rgba(#106557, 0.1) 100%);
+		border: 1px solid $verde-sc;
+
+		a#expandir-subtotal{
+			width: 3rem;
+			height: 3rem;
+			position: absolute;
+			background-color: transparent;
+			left: 0px;
+			top: 1rem;
+			margin: 0;
+			padding: 0;
+			z-index: 1;
+			display: block;
+			text-align: center;
+			margin-top: -8px;
+		}
+
+		p{
+			line-height: 1rem;
+
+			small{
+				font-size: 0.75rem;
+				text-transform: uppercase;
+				position: relative;
+				line-height: 1rem;
+				color: $branco-sc;
+			}
+		}
+
+		p#subtotal{
+			font-size: 1.5rem;
+			line-height: 1.5rem;
+			position: relative;
+			color: $branco-sc;
+		}
+	}
+}

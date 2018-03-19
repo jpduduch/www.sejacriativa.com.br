@@ -1,0 +1,265 @@
+// este arquivo não gerencia os demais desta pasta. ele apenas cuida da tag <main> do assistente de pedido
+
+// html.assistente_pedido{
+// 	@media #{$medium-and-down}{
+// 		overflow: hidden;
+// 		pointer-events: none;
+
+// 		body{
+
+// 			&:after{
+// 				content: '';
+// 				display: block;
+// 				position: absolute;
+// 				background-color: $verde-sc;
+// 				width: 100vw;
+// 				height: 100vh;
+// 				opacity: 1;
+// 				z-index: 1;
+// 			}
+// 		}
+// 	}
+// }
+
+body{
+	&.active{
+		pointer-events: none;
+		overflow: hidden;
+		// filter: blur(8px);
+		height: 100vh;
+
+		&:after{
+			content: '';
+			display: block;
+			width: 100vw;
+			height: 1000vh;
+			background-color: rgba(#000, 0.5);
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+		}
+	}
+}
+
+.azul-sc{
+	background-color: $azul-sc;
+	background-image: linear-gradient(180deg, rgba(29,11,157,0.00) 0%, rgba(#1C0B9E, 0.15) 100%);
+}
+
+.amarelo-sc{
+	background-color: $amarelo-sc;
+	background-image: linear-gradient(180deg, rgba(141,49,0,0.00) 0%, rgba(141,49,0, 0.15) 100%);
+}
+
+.branco-sc{
+	background-color: #f0f0f0; /* $branco-sc; */
+	// background-image: linear-gradient(180deg, rgba(141,49,0,0.00) 0%, rgba(141,49,0, 0.15) 100%);
+}
+
+#area-principal{
+	padding: 1rem 1rem 1rem 2rem;
+	margin-left: 424px;
+	position: relative;
+	display: inline-block;
+	width: calc(100% - 424px);
+	// min-height: 100vh;
+
+	#controle-navegacao-assistente{
+		position: fixed;
+		height: calc(100% - 2rem) !important;
+		width: calc(100% - 456px);
+		pointer-events: none;
+		z-index: 2;
+
+		a{
+			width: 4.5rem;
+			height: 4.5rem;
+			border-radius: 50%;
+			background-color: $branco-sc;
+			border: none;
+			margin: 1rem;
+			position: absolute;
+			pointer-events: all;
+			text-align: center;
+
+			img{
+				margin-top: 1.5rem;
+			}
+
+			span.chip{
+				opacity: 0;
+			}
+
+			&#menu{
+				top: 0;
+				left: 0;
+
+				&.active{
+					opacity: 0;
+					pointer-events: none;
+				}
+
+				// img{
+				// 	margin-top: 1rem;
+				// }
+			}
+
+			&#voltar{
+				bottom: 0;
+				left: 0;
+
+				img{
+					margin-top: 1rem;
+				}
+
+				&.active{
+					opacity: 0;
+					pointer-events: none;
+				}
+			}
+
+			&#continuar{
+				right: 0;
+				bottom: 0;
+				background-color: $rosa-sc;
+
+				img{
+					margin-top: 1rem;
+				}
+
+				&.active{
+					opacity: 0;
+					pointer-events: none;
+				}
+			}
+		}
+	}
+
+	section {
+		margin: 0 auto;
+		display: block;
+		line-height: 1.5rem;
+
+		&#novo-projeto{
+			margin: -1rem;
+			margin-left: -1.5rem;
+		}
+		
+		.peca-container{
+			@extend .azul-sc;
+			height: 50vh;
+			margin-top: 0;
+			text-align: center;
+			position: relative;
+			overflow: hidden;
+			padding-right: 10rem;
+
+			.texto-comecar_por_qual{
+  				left: 10%;
+  				width: 50%;
+  				// propriedades abaixo centralizam o texto na tela
+				@extend %centraliza-vertical;
+
+			}
+
+			h2{
+				color: $amarelo-sc;
+			}
+
+			p{
+				margin-top: 1.5rem;
+				color: $branco-sc;
+			}
+
+			img{
+				width: auto;
+				display: inline-block;
+				position: absolute;
+				max-width: 30vw;
+				right: 0;
+				max-height: 50vh;
+			}
+
+
+		}
+
+		.colecao-container{
+			@extend .amarelo-sc;
+			height: 50vh;
+			margin-top: 0;
+			text-align: center;
+			position: relative;
+			overflow: hidden;
+			
+			// encontrar motivo deste bug
+			margin-bottom: -0.25rem;
+
+			.texto-comecar_por_qual{
+  				width: 50%;
+  				right: 10%;
+  				// propriedades abaixo centralizam o texto na tela
+				@extend %centraliza-vertical;
+			}
+
+			h2{
+				color: $rosa-sc;
+			}
+
+			p{
+				margin-top: 1.5rem;
+				color: #883418;
+			}
+
+			.img-pecas-container{
+				width: 40%;
+				height: 50vh;
+				display: inline-block;
+				position: absolute;
+				left: 0;
+
+				img{
+					width: 50%;
+					position: relative;
+				}
+			}
+
+
+		}
+
+		a.call-to-action{
+			display: inline-block;
+			margin-top: 1.5rem;
+			padding: 1rem 2.5rem !important;
+			// background-color: $branco-sc;
+			border-radius: 2rem;
+			font-family: Din;
+			text-transform: uppercase;
+			width: initial;
+
+			&.sombra-profunda-azul{
+				color: $azul-sc;
+			}
+
+			&.sombra-profunda-amarela{
+				color: $rosa-sc;
+			}
+
+		}
+
+		.texto-comecar_por_qual{
+			width: 60%;
+			display: inline-block;
+
+			a{
+				background-color: $branco-sc;
+				box-shadow: none;
+			}
+		}
+
+		.container-cards{
+			padding-top: 5.5rem;
+		}
+	}
+
+}

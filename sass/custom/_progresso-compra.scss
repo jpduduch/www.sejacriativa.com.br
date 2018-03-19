@@ -1,0 +1,129 @@
+.progresso{
+	display: block;
+	margin-bottom: 2rem;
+	position: relative;
+
+	.icones-progresso-container{
+		display: flex;
+		justify-content: space-between;
+
+		@media #{$medium-and-down}{
+			display: block;
+		}
+	}
+
+	figure{
+		position: relative;
+		max-width: 5rem;
+		@media #{$medium-and-down}{
+			display: block;
+			width: 100%;
+			max-width: initial;
+			margin-top: 2rem;
+		}
+
+		&.disabled{
+			// filter: grayscale(1);
+			h6, p{
+				color: $cinza-sc !important;
+			}
+
+			p:last-of-type{
+				color: $rosa-sc !important;
+			}
+			&:before{
+				background-color: #f3f3f3;
+			}
+		}
+
+		img{
+			position: absolute;
+			width: 5rem;
+			left: -1rem;
+			top: -1rem;
+			max-width: initial;
+			@media #{$medium-and-down}{
+				display: inline-block;
+				width: 3rem;
+			}
+		}
+
+		&:before{
+			@extend %exibir-pseudo-elemento;
+			width: 4.5rem;
+			height: 4.5rem;
+			background-color: $verde-sc;
+			border-radius: 50%;
+			position: absolute;
+
+			@media #{$medium-and-down}{
+				width: 2.5rem;
+				height: 2.5rem;
+			}
+		}
+
+		figcaption{
+			margin-top: 5rem;
+			text-align: center;
+			font-size: 0.75rem;
+			line-height: 1rem;
+			@media #{$medium-and-down}{
+				display: inline-block;
+				margin-top: 0;
+				margin-left: 3.5rem;
+				min-height: 2rem;
+				p{margin-left: 0 !important; text-align: left;}
+			}
+
+			h6{
+				margin: 0;
+				text-transform: initial;
+				color: $verde-sc;
+				text-align: center;
+				@media #{$medium-and-down} {
+					text-align: left;
+				}
+			}
+
+			p{
+				margin: 0;
+			}
+		}
+	}	
+
+}
+.barra-pedido-container{
+	display: block;
+	background-color: rgba($cinza-sc, 0.1);
+	height: 1rem;
+	width: calc(100% - 4.75rem);
+	margin-top: 2rem;
+	margin-bottom: -2.75rem;
+	margin-left: auto;
+	margin-right: auto;
+	@media #{$medium-and-down}{
+		position: absolute;
+		height: 0.5rem;
+		transform: rotate(90deg);
+		transform-origin: left top;
+		top: 1rem;
+		left: 2rem;
+		width: 16rem;
+	}
+
+	.barra-total{
+		position: relative;
+		height: 1rem;
+		width: 100%;
+
+		.barra-completa{
+			position: absolute;
+			background-color: $verde-sc;
+			height: 1rem;
+			border-radius: 0.5rem;
+			transition: 1s;
+			width: 0%;
+			@media #{$medium-and-down}{height: 0.5rem;}
+		}
+	}
+}

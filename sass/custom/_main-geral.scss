@@ -1,0 +1,342 @@
+body{ background-color: $branco-sc;}
+
+main:not(.home){
+	section{
+		&:after{
+			@extend %exibir-pseudo-elemento, %sublinhado-pontilhado, %centraliza-horizontal;
+			max-width: 1040px;
+			margin-top: 2rem;
+			color: $azul-sc;
+
+			@media #{$medium-and-down}{ display: none; }
+		}
+		&:last-of-type:after{
+			display: none;
+		}
+	}
+}
+
+// estilos da dashboard
+#ferramenta-criacao{
+	@media #{$medium-and-down}{	display: none; }
+	a.call-to-action{
+		margin: 2rem auto;
+		max-width: 21rem;
+	}
+
+	p {text-align: center;}
+}
+
+#info-perfil{
+	.info-usuario{
+		text-align: center;
+		@media #{$medium-and-down}{ padding: 0 2.5rem; margin-top: -4.5rem; }
+
+		h3{
+			color: $rosa-sc;
+			margin-bottom: 2rem;
+			@media #{$large-and-up}{ display: none; }
+		}
+
+		figure img{
+			margin: 0 25%;
+			width: 50%;
+		}
+
+		figcaption{
+			h6{
+				font-size: 1.125rem;
+				color: $verde-sc;
+				line-height: 1.5rem;
+				text-transform: initial;
+				font-weight: $bold;
+				margin-top: 1rem;
+			}
+			
+			
+			span{
+				font-weight: $bold;
+				font-size: 0.75rem;
+				color: $rosa-sc;
+				line-height: 1.5rem;
+			}
+
+			&:after{
+				@extend %exibir-pseudo-elemento, %sublinhado-pontilhado;
+				color: $azul-sc;
+				margin: 0 auto;
+				margin-top: -0.5rem;
+				margin-bottom: 0.5rem;
+				width: 75%;
+			}
+
+		}
+		address{
+			font-size: 0.75rem;
+			line-height: 1rem;
+			color: $cinza-sc;
+			span { color: $rosa-sc; }
+			p{ margin: 0; }
+		}
+	}
+
+	#estatisticas{
+		@media #{$medium-and-down} { display: none; }
+
+		h4{
+			font-size: 3rem;
+			color: $verde-sc;
+			font-weight: $bold;
+			text-align: left;
+			margin: 1rem 0;
+		}
+
+		h6{
+			text-align: left;
+			text-transform: initial;
+		}
+
+	}
+}
+
+#pedidos-abertos{
+	@media #{$medium-and-down}{ display: none; }
+	p{ color: $rosa-sc; font-weight: $bold; margin-top: 0; }
+
+	.card-pedido-aberto{
+		@extend .sombra-profunda;
+		margin-top: 3.5rem;
+		border-radius: 1rem;
+		overflow: hidden;
+		background-color: $branco-sc;
+		padding: 0;
+		position: relative;
+
+		.excluir-pedido-small{
+			position: absolute;
+			top: 0;
+			right: 0;
+			margin-right: 1.5rem;
+			padding: 0.8rem;
+			background-color: $branco-sc;
+			border-radius: 50%;
+			i{ display: flex; }
+		}
+
+		.thumbnail-pedido{
+			height: 12rem;
+			overflow: hidden;
+		}
+
+		.header-colecao{
+			@extend %centraliza-horizontal;
+			margin-top: -5rem;
+		}
+
+		.caption-card-pedido{
+			padding: 2rem;
+			h6{ text-align: left; }
+
+			.legenda-barra-conclusao{
+				display: inline-block;
+				margin-top: -1.5rem;
+				width: 50%;
+				float: left;
+				small{ color: $cinza-sc; }
+				h4{ text-align: left; }
+			}
+
+			.pecas-personalizadas{
+				display: inline-block;
+				margin-top: -1.5rem;
+				text-align: right;
+				width: 49%;
+				color: $cinza-sc;
+				span{font-weight: $bold; color: $rosa-sc; }
+			}
+
+			.call-to-action{ margin-top: 3.5rem; }
+		}
+
+	}
+		
+	.card-novo-pedido-container{
+		.card-novo-pedido{
+			margin-top: 3.5rem;
+			border-radius: 1rem;
+			border: 2px dashed $rosa-sc;
+			display: block;
+			background-color: rgba($rosa-sc, 0.2);
+			height: 550px;
+			position: relative;
+			
+			.container-de-conteudo{
+				@extend %centraliza-vertical;
+				width: 100%;
+
+				div{ margin-top: 2rem;}
+			}
+		}
+	}
+}
+
+#pedidos-efetuados{
+	h3{ @media #{$medium-and-down} { margin-left: 1rem;  }}
+	p{ 
+		color: $rosa-sc;
+		@media #{$medium-and-down}{
+			margin-left: 1rem;
+		}
+	}
+
+	.card-andamento{
+		@extend .sombra-profunda;
+		background-color: #FFF;
+		border-radius: 1rem;
+		padding: 2.5rem 0;
+		margin-bottom: 2.5rem;
+		@media #{$medium-and-down}{
+			margin: 1rem;
+			margin-top: 4rem;
+			box-shadow: $sombra-profunda-on !important;
+			.andamento-infos-principais{
+				padding: 0 2rem; 
+			}
+		}
+
+		.andamento-header{
+			.header-colecao{
+				@extend %centraliza-horizontal;
+				margin-bottom: 2rem;
+				margin-top: 3rem;
+				@media #{$medium-and-down}{margin-top: -4rem;}
+			}
+		}
+
+		.endereco-entrega{
+			margin-top: -3rem;
+			@media #{$medium-and-down}{margin-top: 0;}
+			h6{ text-align: left; }
+			p {color: $cinza-sc};
+		}
+
+		.botoes-controle{
+			margin-top: -3rem;
+			@media #{$medium-and-down}{margin: 2rem 0;}
+		}
+	}
+
+	.concluidos-container table{ @media #{$medium-and-down} { margin: 0 1rem; }}
+}
+
+.barra-conclusao-container{
+	height: 0.5rem;
+	width: 100%;
+	background-color: rgba($cinza-sc, 0.1);
+	border-radius: 0.25rem;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+
+	.barra-completa{
+		@extend .barra-conclusao-container;
+		width: 0%;
+		background-color: $rosa-sc;
+		transition: 1s;
+	}
+}
+// fim estilos da dashboard
+
+
+// estilos ajuda
+#faq{
+	padding: 2rem;
+	
+	@media #{$large-and-up}{
+		padding: 0;
+	}
+
+	h1{
+		margin-top: 1rem;
+		color: $rosa-sc;
+
+		@media #{$large-and-up}{
+			margin-top: 10rem;
+		}
+	}
+
+	input{
+		text-align: center;
+		text-transform: uppercase;
+		margin-top: 3rem;
+	}
+
+	h6{
+		margin-top: 0.5rem;
+		margin-bottom: 1.5rem;
+	}
+	
+	.assuntos-recorrentes{
+		text-align: center;
+	}
+
+	.perguntas-container{
+		margin-top: 5rem;
+		p{
+			font-weight: $medium;
+			color: $azul-sc;
+			display: inline-block;
+			width: 100%;
+			float: left;
+			text-align: left;
+			text-transform: initial;
+
+			&:before{
+				content: '';
+				display: inline-block;
+				margin-right: 1rem;
+				background: url('../img/icones/list-marker.svg');
+				width: 1rem;
+				height: 1rem;
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+
+			@media #{$large-and-up}{
+				width: 50%;
+			}
+		}
+	}
+}
+
+// página de dados pessoais
+
+#dados-pessoais{
+	p, small{ text-align: center; margin-bottom: 1rem; }
+	small{
+		color: $rosa-sc;
+		font-weight: $bold;
+		line-height: 1rem;
+		display: block;
+	}
+
+	.button-foto-container{
+		small{
+			font-weight: $regular;
+			text-transform: initial;
+		}
+		.upload-foto{
+			background-color: $rosa-sc;
+			width: 2rem;
+			height: 2rem;
+			padding: 0 !important;
+			margin-top: -2rem;
+		}
+	}
+
+	.secondary{
+		margin-bottom: 1rem;
+		margin-top: 1rem;
+	}
+	
+}
+

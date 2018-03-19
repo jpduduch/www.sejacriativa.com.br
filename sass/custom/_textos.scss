@@ -1,0 +1,154 @@
+// // Tamanho
+
+// @for $i from 1 through 10 {
+//   .texto-#{$i*8} {
+// 	  	@if $i < 3 {
+// 	  	 	line-height: 24px;
+// 	  	}
+// 	  	@else if $i == 3{
+// 	  		line-height: 2rem;
+// 	  	}
+// 	  	@else if $i > 3 and $i < 7 {
+// 	  		line-height: 2rem;
+// 	  	}
+// 	  	@else {
+// 	  		line-height: 48px;
+// 	  	}
+// 		font-size: 8px * $i;
+// 	}
+// }
+
+// // Line-Height
+// @for $i from 1 through 8 {
+// 	.line-#{$i*8} {
+// 		line-height: 8px * $i;
+// 	}
+// }
+
+// // Fontes
+
+// .pacifico {
+// 	font-family: Pacifico;
+// }
+
+// .din-l {
+// 	font-family: Din-L;
+// }
+
+// .din-r {
+// 	font-family: Din-R;
+// }
+
+// .din-m {
+// 	font-family: Din-M;
+// }
+
+// .din-b {
+// 	font-family: Din-B;
+// }
+
+// .din-bl {
+// 	font-family: Din-BL;
+// }
+
+// // Icones
+
+// @for $i from 1 through 8 {
+//   .top-#{$i*8} {
+// 		top: 8px * $i;
+// 	}
+// }
+
+// headers e textos pré-formatados
+
+*, html, body{
+	font-family: Din;
+	font-weight: $regular;
+	&::-moz-selection { background-color: rgba($amarelo-sc, 0.5) !important; }
+	&::selection { background-color: rgba($amarelo-sc, 0.5) !important; }
+}
+
+h1, h2, h3{
+	font-family: Pacifico;
+	margin-bottom: 1.5rem;
+	font-weight: $light;
+	color: $verde-sc;
+}
+
+h4, h5, h6, p, a{
+	font-family: Din;
+}
+
+h1{
+	font-size: 3.5rem;
+	line-height: 3.5rem;
+}
+
+h2{
+	font-size: 3rem;
+	line-height: 3rem;
+}
+
+h3{
+	font-size: 2rem;
+	line-height: 2rem;
+	margin-top: 2.5rem;
+
+	&.sublinhado-rosa{
+		position: relative;
+		display: inline-block;
+		&:after{
+			@extend %exibir-pseudo-elemento, %sublinhado-pontilhado;
+			display: inline-block;
+			width: 100%;
+			position: absolute;
+			color: $rosa-sc;
+			left: 0;
+			bottom: -1rem;
+		}
+	}
+}
+
+h4{
+	color: $verde-sc;
+	font-size: 1.5rem;
+	margin: 2rem 0;
+}
+
+h6{
+	color: $rosa-sc;
+	font-weight: $bold;
+	text-transform: uppercase;
+}
+
+p{
+	color: $cinza-sc;
+	font-weight: $regular;
+	margin-top: 0.5rem;
+}
+
+a{
+	text-transform: uppercase;
+	font-weight: $bold;
+	color: $rosa-sc;
+	cursor: pointer;
+	margin-top: 1.5rem;
+	&.sub-azul{
+		border-bottom: 2px dashed $azul-sc;
+	}
+}
+
+small{
+	font-size: 12px;
+}
+
+h1,h2,h3,h4,h5,h6, a{
+	text-align: center;
+}
+
+h1,h2,h3,h4,h5,h6, p, a, small, span, div {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: geometricPrecision;
+}
+

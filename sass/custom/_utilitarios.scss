@@ -1,0 +1,229 @@
+*, *:before, *:after {
+ box-sizing: inherit;
+}
+
+body {
+  position: relative;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+ul {
+  &:not(.browser-default) {
+    padding-left: 0;
+    list-style-type: none;
+
+    li {
+      list-style-type: none;
+    }
+  }
+}
+
+a {
+	text-decoration: none;
+
+  // Gets rid of tap active state
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+
+.container{
+  max-width: 1568px;
+  margin: 0 auto;
+  @extend .row;
+}
+
+// Images
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+// imagem inscrita em círculo
+
+img.circular{
+  @extend %circle;
+  object-fit: cover;
+  object-position: center;
+}
+
+// Responsive Videos
+%video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+
+    iframe, object, embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+}
+
+
+.chip{
+    display: inline-block;
+    background-color: $rosa-sc;
+    padding: 0 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.625rem;
+    font-weight: $bold;
+    text-transform: uppercase;
+    color: $branco-sc;
+    margin: 0.25rem 0.125rem;
+}
+
+.balao-popup{
+      background-color: $branco-sc;
+      color: $rosa-sc;
+      display: inline-block;
+      font-weight: $bold;
+      padding: 0.125rem 0.5rem;
+      border-radius: 0.5rem;
+      position: relative;
+      transition: 1s;
+      margin-left: -1.5rem;
+      
+      &:after{
+        content: '';
+        display: block;
+        width: 0.75rem;
+        height: 0.75rem;
+        background-color: $branco-sc;
+        position: absolute;
+        top: 1.125rem;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        transform-origin: center;
+        z-index: -1;
+      }
+    }
+
+
+
+
+/*******************
+  Utility Classes
+*******************/
+
+%hide {
+  display: none !important;
+}
+
+// Text Align
+%left-align {
+  text-align: left;
+}
+%right-align {
+  text-align: right
+}
+%center, %center-align {
+  text-align: center;
+}
+
+%left {
+  float: left !important;
+}
+%right {
+  float: right !important;
+}
+
+// alinhamento de conteúdo vertical. nem sempre funciona
+
+%valign-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+// No Text Select
+%no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+// criar divs circulares (só funciona com divs quadradas)
+%circle {
+  border-radius: 50%;
+}
+
+// colocar reticencias ao final da linha de texto
+%truncate {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+%no-padding {
+  padding: 0 !important;
+}
+
+// deixa a área de determinado elemento sendo a da tela completa
+%full-page{
+	width: 100%;
+	height: 100vh;
+}
+
+// centraliza elementos com largura pre-definida
+%centraliza-horizontal{
+  display: block;
+  margin: 0 auto;
+}
+
+// centraliza elementos verticalmente
+%centraliza-vertical{
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// centraliza na tela. não funcionará se tiver propriedades do tipo max-width: auto e afins.
+%centraliza-ambos{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+// controlar max-width dos elementos em múltiplos de 16.
+
+%max-w{
+
+  @for $i from 17 through 87{
+    &-#{$i * 16}{
+      max-width: $i * 16px !important;
+      margin: 0 auto;
+    }
+  }
+}
+
+%exibir-pseudo-elemento{
+  content: '';
+  display: block;
+}
+
+
+// hack para exibir o sublinhado pontilhado, devido às limitações da propriedade 'border do css
+%sublinhado-pontilhado{
+  overflow: hidden;
+  content: '....................................................................................................................................................................................' !important;
+  font-size: 1.5rem;
+  margin-top: -1rem;
+  text-align: left;
+}
+
+

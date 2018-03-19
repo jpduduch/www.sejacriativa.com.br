@@ -1,0 +1,397 @@
+%button{
+	@extend %centraliza-horizontal;
+	width: 100%;
+	margin-bottom: 1rem;
+	border-radius: 2rem;
+	padding: 1rem !important;
+	display: block;
+	font-weight: $bold;
+	border: none;
+	font-size: 1rem;
+	text-transform: uppercase;
+	cursor: pointer;
+	// max-width: 21rem;
+
+	&-cta{
+		@extend %button;
+		color: $branco-sc;
+		background-color: $rosa-sc;
+	}
+
+	&-secondary{
+		@extend %button;
+		color: $rosa-sc !important;
+		background-color: transparent;
+		border: 2px dotted $rosa-sc;
+	}
+}
+
+button, input[type=submit]{
+	@extend %button-cta;
+}
+
+// inputs personalizados
+
+
+// remover visualização de caixa de seleção
+
+input, button{
+	background-color: transparent;
+	&:focus, &:active{
+		outline: none;
+	 	-webkit-box-shadow: none;
+  		box-shadow: none;
+  		border: none;
+	}
+}
+
+label{
+	font-size: 12px;
+	text-align: left;
+	width: 100%;
+	display: block;
+	margin-bottom: -0.5rem;
+	&.amarelo-sc{
+		color: $amarelo-sc;
+		background-color: transparent;
+		background-image: none;
+	}
+
+	&.obrigatorio{
+		color: $rosa-sc;
+	}
+
+	&.correto{
+		color: $verde-sc;
+	}
+
+	&.opcional{
+		color: $azul-sc;
+	}
+}
+
+input:not([type=submit]), select{
+	// opacity: 0.7;
+	font-size: 1rem;
+	line-height: 24px;
+	margin-bottom: -0.25rem;
+	width: 100%;
+	border: none;
+	padding: 13px 0;
+	color: $cinza-sc;
+	border-bottom: 2px solid $azul-sc;
+	&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	  color: rgba($cinza-sc, 0.5);
+	}
+	&::-moz-placeholder { /* Firefox 19+ */
+	  color: rgba($cinza-sc, 0.5);
+	}
+	&:-ms-input-placeholder { /* IE 10+ */
+	  color: rgba($cinza-sc, 0.5);
+	}
+	&:-moz-placeholder { /* Firefox 18- */
+	  color: rgba($cinza-sc, 0.5);
+	}
+	&+span{
+		margin-bottom: 1rem;
+		width: 100%;
+		display: block;
+		margin-top: 0.5rem;
+		&.obrigatorio:after{
+			@extend %exibir-pseudo-elemento, %sublinhado-pontilhado;
+			color: $rosa-sc;
+		}
+		&.correto:after{
+			@extend %exibir-pseudo-elemento, %sublinhado-pontilhado;
+			color: $verde-sc;
+		}
+		&.opcional:after{
+			@extend %exibir-pseudo-elemento, %sublinhado-pontilhado;
+			color: $azul-sc;
+		}
+	}
+
+
+	&.fundo-colorido{
+		color: $branco-sc;
+		border-bottom: 2px solid $branco-sc;
+		&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		  color: rgba($branco-sc, 0.5);
+		}
+		&::-moz-placeholder { /* Firefox 19+ */
+		  color: rgba($branco-sc, 0.5);
+		}
+		&:-ms-input-placeholder { /* IE 10+ */
+		  color: rgba($branco-sc, 0.5);
+		}
+		&:-moz-placeholder { /* Firefox 18- */
+		  color: rgba($branco-sc, 0.5);
+		}
+		&+span.pontilhado-amarelo-sc{
+			width: 100%;
+				display: block;
+				margin-top: 0.5rem;
+				margin-bottom: 2.5rem;
+				&:after{
+					@extend %exibir-pseudo-elemento, %sublinhado-pontilhado;
+					color: $amarelo-sc;
+				}
+			
+		}
+	}
+}
+
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: transparent !important;
+    background-image: none !important;
+    color: $cinza-sc !important;
+}
+
+
+
+select{
+	background-color: transparent;
+	border-radius: 0;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    color: $azul-sc;
+}
+
+input[type=checkbox]{
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    border-bottom: none;
+    display: inline-block;
+    width: 20%;
+
+    &:before{
+    	content: '';
+    	display: inline-block;
+    	width: 3rem;
+    	height: 1.5rem;
+    	background-color: $cinza-sc;
+    	border-radius: 0.75rem;
+    	cursor: pointer;
+    	margin-right: 1rem;
+
+    }
+
+    &+span{
+    	display: inline-block;
+    	font-weight: $bold;
+    	color: $cinza-sc;
+    	vertical-align: bottom;
+    	cursor: pointer;
+    	width: 77%;
+    	margin-top: 2rem;
+    }
+
+    &:checked{
+    	&:before{
+    		background-color: $verde-sc;
+    		background-image: url("../img/icones/checked-branco.svg");
+    		background-repeat: no-repeat;
+    		background-position: center;
+    	}
+
+    	&+span{
+    		color: $verde-sc;
+    	}
+    }
+}
+
+// botões que não são itens de formulário
+
+a, button{
+	&#call-to-action, &.call-to-action{
+		@extend %button-cta;
+		background-color: $rosa-sc;
+	}
+
+	&#secondary, &.secondary{
+		@extend %button-secondary;
+		margin-bottom: 0.5rem;
+	}
+
+	&.cta-small{
+		color: $branco-sc;
+		background-color: $rosa-sc;
+		padding: 0.25rem 1rem;
+		border-radius: 1rem;
+		margin-top: 1rem;
+		margin-bottom: 1.5rem;
+		display: inline-block;
+		@media #{$medium-and-down}{
+			margin-bottom: 1rem;
+			border-radius: 2rem;
+			padding: 1rem 2rem;
+			font-weight: $bold;
+			border: none;
+			font-size: 1rem;
+			text-transform: uppercase;
+			cursor: pointer;
+		}
+
+		&:hover{
+			background-color: $branco-sc;
+			color: $rosa-sc;
+		}
+
+		&:active{
+			background-color: $verde-sc;
+			color: $branco-sc;
+		}
+	}
+}
+
+// como atributos de input não aceitam pseudo-elementos, criei esta classe que vai no container para receber o :after
+
+.select-box{
+	position: relative;
+
+	&:after{
+		content: url('../img/icones/seta-baixo.svg');
+		display: inline-block;
+		position: absolute;
+		right: 0.5rem;
+		top: 2rem;
+		pointer-events: none;
+	}
+}
+
+.checkbox-container{
+	margin-bottom: 2rem;
+}
+
+// estilos para a página de busca
+
+form.busca{
+	position: relative;
+
+		/* clears the 'X' from Internet Explorer */
+	input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+	input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+	/* clears the 'X' from Chrome */
+	input[type="search"]::-webkit-search-decoration,
+	input[type="search"]::-webkit-search-cancel-button,
+	input[type="search"]::-webkit-search-results-button,
+	input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+
+	button{
+		display: inline-block;
+		width: initial;
+		position: absolute;
+		right: -0.5rem;
+		top: 2.5rem;
+	}
+}
+
+// estilos para o contabilizador de filhos na página de dados pessoais
+
+#dados-pessoais{
+	.contabilizador-filhos{
+		display: block;
+		max-width: 20rem;
+		border: 2px dotted $rosa-sc;
+		margin: 0 auto;
+		position: relative;
+		border-radius: 1.5rem;
+		margin-bottom: 2.5rem;
+
+		button{
+			position: absolute;
+			color: $rosa-sc;
+			width: initial;
+			top: 0;
+			font-size: 1.5rem;
+			padding-top: 0.25rem !important;
+
+			&:first-child{
+				left: 0;
+			}
+
+			&:last-child{
+				right: 0;
+			}
+		}
+
+		input{
+			text-align: center;
+			font-size: 2rem;
+			font-weight: $bold;
+			color: $rosa-sc;
+			padding: 0;
+			border: none;
+			vertical-align: super;
+		}
+	}
+
+	.card-filho-container{
+		margin-bottom: 3rem;
+		
+		.card-filho{
+			box-shadow: $sombra-profunda-off;
+			padding: 2rem;
+			border-radius: 1rem;
+			margin: 0.5rem;
+			background-color: #fff;
+			width: calc(100% - 1rem);
+			float: left;
+			@media #{$large-and-up}{
+				width: calc(50% - 1rem);
+			}
+		}
+	}
+}
+
+// estilos do campo de input da checkout
+
+.cupom-container{
+	label{
+		color: $amarelo-sc;
+	}
+
+	input[type=text], input[type="text"]{
+		color: #fff;
+		border-bottom: 2px solid $branco-sc;
+		font-size: 2rem;
+		text-transform: uppercase;
+		margin-top: -0.5rem;
+
+		&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		  color: rgba($branco-sc, 0.5);
+		  text-transform: initial;
+		  font-size: 1rem;
+		}
+		&::-moz-placeholder { /* Firefox 19+ */
+		  color: rgba($branco-sc, 0.5);
+		  text-transform: initial;
+		  font-size: 1rem;
+		}
+		&:-ms-input-placeholder { /* IE 10+ */
+		  color: rgba($branco-sc, 0.5);
+		  text-transform: initial;
+		  font-size: 1rem;
+		}
+		&:-moz-placeholder { /* Firefox 18- */
+		  color: rgba($branco-sc, 0.5);
+		  text-transform: initial;
+		  font-size: 1rem;
+		}
+
+		// &:focus{
+		// 	margin-top: -0.5rem;
+		// }
+
+		&+span:after{
+			color: $amarelo-sc;
+		}
+	}
+}

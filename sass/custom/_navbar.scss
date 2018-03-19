@@ -1,0 +1,45 @@
+nav{
+	width: 100%;
+	background-color: $azul-sc;
+	display: flex;
+	height: 44px;
+
+	a{
+		&.menu, &.help{
+			width: 4.5rem;
+			height: 4.5rem;
+			min-width: 4.5rem;
+			border-radius: 50%;
+			background-color: $branco-sc;
+			border: none;
+			display: block;
+			margin: 2.5rem 5.5rem;
+			@extend %sombra-profunda-azul;
+
+			img{
+				margin-top: 1.5rem;
+			}
+
+			@media #{$medium-and-down}{
+				display: none;
+			}
+		}
+
+
+		&.logo{
+			display: block;
+			margin: 2.5rem auto;
+			max-width: 248px;
+		}
+	}
+	
+	&:after{
+		@extend %exibir-pseudo-elemento;
+		background-image: url("../img/transicoes/transicao-azul-invertida.svg");
+		height: 100px;
+		width: 100%;
+		position: absolute;
+		top: 44px;
+		z-index: -1;
+	}
+}

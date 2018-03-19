@@ -1,0 +1,1012 @@
+@charset "UTF-8";
+@import "components/variables";
+
+// Page Header
+
+.header-bg{
+
+	position: relative;
+	height: 100%;
+
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: url('../img/home-bg.jpg');
+		background-size: cover;
+		background-position: center;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}
+	
+}
+
+// essas duas classes abaixo são pra "controlar" a altura da seção header e manter o form de login centralizado. para desktop ela funciona 99% ok. para mobile é preciso escrever um js para que ela não redimensione quando o usuário ocultar a barra de url ao navegar, o que ocasiona uma "tremida" na página. essas duas classes são um sistema de segurança caso o js não execute por alguma razão.
+
+.page-header{
+	height: calc(100vh + 100px);
+	min-height: 860px !important;
+}
+
+.login-form{
+	@media #{$medium-and-up}{
+		padding: 15% 0;
+	}
+}
+
+div.form span.icon-check {
+	position: relative;
+    bottom: 15px;
+    left: 10px;
+    cursor: pointer;
+}
+
+div.slide {
+	position: absolute;
+	transform: translate3d(500%, 0, 0);
+    margin-left: -272px;
+    display: none;
+    left: 50%;
+}
+
+div.elemento-cadastro {
+	margin-top: -288.5px;
+	top: 50%;
+}
+
+div.elemento-login {
+	margin-top: -259.5px;
+	top: 50%;
+}
+
+// controlar a posição das ilustrações sobre o video na home
+
+.ilustra-video{
+	margin-bottom: -56px;
+}
+
+// controlar div do mockup
+
+.mockup-container{
+	position: relative;
+}
+
+.mockup{
+	position: absolute;
+	right: 0 !important;
+}
+
+button.btn-form {
+	height: 48px !important;
+}
+
+.ou:before, .ou:after{
+	content: "~";
+	display: inline-block;
+	position: relative;
+	bottom: -12px;
+	margin: 0px 10px;
+	color: $azul-sc;
+}
+
+.funciona:before, .funciona:after{
+	display: inline-block;
+	position: relative;
+	margin: 0 5px;
+}
+
+// .funciona-amarelo:after {
+// 	content: "";
+// 	display: block;
+// 	border-bottom: 4px dotted $rosa-sc;
+// 	width: 65%;
+// 	margin: 0 auto;
+// 	margin-top: 16px;
+// }
+
+// Form Junte-se 
+div.form-news {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+div.junte {
+	padding-bottom: 160px;
+}
+
+.branco-form label {
+   color: #fff !important;
+ }
+.branco-form input[type=email]{
+   color: #fff !important;
+   border-bottom: 1px solid #fff !important;
+}
+
+.cadastrar:after {  
+	content: "";
+	display: block;
+	border-bottom: 5px dashed $amarelo-sc;
+	margin-top: -10px;
+}
+
+button.btn-cadastro {
+	color: $rosa-sc;
+}
+
+button.btn-news {
+	color: $azul-sc;
+}
+
+.junte-se {
+	padding-bottom: 80px;
+}
+
+// HELP Navbar
+
+nav {
+	height: 100px !important;
+}
+
+nav .nav-wrapper .brand-logo img{
+    height: 100px;
+}
+
+nav .nav-wrapper #nav-mobile {
+	margin-top: 15px;
+}
+
+div.box-instrucao {
+	height: 128px;
+	border-radius: 15px;
+	text-transform: uppercase;
+}
+
+nav .button-collapse {
+    margin: 0 8px !important;
+    & i {
+    	line-height: 90px !important;
+    }
+}
+
+a.fechar {
+	float: right !important;
+	width: 70px !important;
+	height: 70px;
+	background: $rosa-sc !important;
+	border-radius: 40px !important;
+	padding: 1.3em 1em !important;
+	margin-right: -20px !important;
+	margin-top: -10px !important;
+	& i {
+		margin-right: 10px !important;
+	}
+}
+
+// Busca
+section.page-help form.busca-duvida div.input-duvida span.icon-search {
+	position: relative;
+	top: -62px;
+	left: 92%;
+	font-size: 40px;
+}
+
+// pòs login 
+
+button.dados-pessoais {
+	border: 2px dotted $rosa-sc !important;
+	color: $rosa-sc !important;
+	line-height: 0 !important;
+}
+
+div.borda {
+	border: 1px solid #e8e8e8;
+	border-radius: 30px;
+	box-sizing: border-box;
+}
+
+div.card-row {
+	height: 150px;
+}
+
+div.pedidos-aberto {
+	height: 450px;
+}
+
+div.novo-pedido {
+	background: lighten($rosa-sc, 40%) !important;
+}
+
+div.bordered {
+	border-bottom: 2px dashed $azul-sc;
+	&-white {
+		border-bottom: 2px dashed $branco-sc;
+	}
+}
+
+div.bordered-top {
+	border-top: 2px dashed $azul-sc;
+	&-white {
+		border-top: 2px dashed $branco-sc;
+	}
+}
+
+div.concluidos-linha {
+	padding: 0 30px;
+}
+
+.creative-progress .circle,
+.creative-progress .barra {
+	display: inline-block;
+	background: #ddd;
+	width: 70px; 
+	height: 70px;
+	border-radius: 40px;
+}
+
+.creative-progress .barra {
+	position: relative;
+	width: 9%;
+	height: 10px;
+	top: -30px;
+	margin-left: -5px;
+	margin-right: -5px;
+	border-left: none;
+	border-right: none;
+	border-radius: 0;
+}
+
+.circle.done, .barra.done {
+	background: $verde-sc;
+}
+
+.img-progress img {
+	top: -7px;
+	left: -40px;
+	position: absolute;
+}
+
+.img-progress.transportadora img {
+	top: 13px;
+	left: -40px;
+	position: absolute;
+}
+
+// Side-nav projeto-peça
+
+header.barra-lateral ul.side-nav {
+	margin: 0 auto;
+	width: 90px;
+	background: $azul-sc;
+	& li {
+		opacity: 0.4;
+	}
+	& li:hover {
+		opacity: 1;
+	}
+}
+
+div.circle-qte {
+	border-radius: 100%;
+	width: 25px;
+	height: 24px;
+}
+
+aside.menu-compra {
+	width: 415px !important;
+}
+
+div.verde-bg-opaco {
+	height: 334px;
+	overflow: auto;
+}
+
+section.lista-produtos {
+	margin-left: 490px;
+	min-width: 1080px;
+}
+
+// Buscar Itens
+
+section.lista-produtos form.busca-itens div.input-itens span.icon-search {
+	position: relative;
+	top: -62px;
+	left: 92%;
+	font-size: 40px;
+}
+
+div.container-produtos {
+	border: 1px solid #fff;
+	background: $branco-sc;
+	// background-image: linear-gradient(-132deg, rgba(0,0,0,0.00) 28%, #000000 100%);
+	box-shadow: 0 4px 4px 0 rgba(16,55,101,0.35);
+	height: 400px;
+	width: 248px;
+}
+
+// div.subtotal {
+// 	position: fixed;
+// 	width: 336px;
+// 	top: -354px;
+// 	right: 8px;
+// 	border-radius: 16px;	
+// 	box-shadow: 0 4px 4px 0 rgba(16,55,101,0.35);	
+// 	z-index: 11;	
+// 	overflow-y: auto;	
+// }
+
+div.listagem {
+	max-height: 870px; 
+	overflow-y: auto;
+}
+
+button.subtotal-menu {
+	border: 0;
+	background: transparent;
+	outline: none;
+}
+
+.subtotal-menu span {
+	display: block;
+	width: 4px;
+	height: 4px;
+	background: $branco-sc;
+	margin: 3px 0;
+	border-radius: 4px;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	background-color: rgba(0,0,0,0.5);
+	overflow-y: hidden;
+}
+
+div.total-collapse {
+	border-radius: 0px 0px 16px 16px;
+	height: 45px;
+}
+
+p.subtotal-valor {
+	line-height: 0 !important;
+}
+
+div.subtotal-itens {
+	background: $branco-sc;
+	width: 336px;
+}
+
+img.produto-img {
+    position: relative;
+    height: 300px;
+    width: 250px;
+    left: -20%;
+}
+
+div.conteudo-card {
+	position: relative;
+	top: -96px;
+}
+
+p.nome-produto {
+	font-size: 12px;
+}
+
+span.qtePecas {
+	font-size: 12px;
+}
+
+.quero {
+	transition: .5s;
+	box-shadow: 0 64px 64px 0 rgba(16,55,101,0.50),
+				0 32px 32px 0 rgba(16,55,101,0.50),
+				0 16px 16px 0 rgba(16,55,101,0.35),
+				0 8px 8px 0 rgba(16,55,101,0.35),
+				0 4px 4px 0 rgba(16,55,101,0.35) !important;
+}
+
+span.continuar-projeto {
+	position: absolute;
+	right: 32px;
+	bottom: 32px;
+}
+
+a#continuar-link { 
+	z-index: 10;
+	& button.btn-continuar {
+		position: fixed;
+		background: #fff;
+		height: 48px;
+		width: 203px;
+		bottom: 43px;
+		right: 72px;
+	}
+}
+
+div.contador {
+	background: $branco-sc;
+	border-radius: 30px;
+	border: thick dotted $rosa-sc;
+	& input[type=text] {
+		width: 50%;
+		height: 1em;
+		border: none !important;
+		color: $rosa-sc !important;
+		font-size: 32px;
+		text-align: center;
+		margin-bottom: 11px;
+	}
+	& button {
+		color: $rosa-sc;
+		font-size: 32px;
+		border: none;
+		background: $branco-sc;
+	}
+}
+
+button.quero-btn {
+	padding: 30px !important;
+	line-height: 0 !important;
+}
+
+// Cadastro Pessoal 
+
+div.numero-filhos{
+	background: #f5f5f5;
+	border-radius: 30px;
+	& input[type=text] {
+		width: 74%;
+		height: 1em;
+		border: none !important;
+		color: $rosa-sc !important;
+		font-size: 32px;
+		text-align: center;
+		margin: 0 !important;
+	}
+	& button.menos-filhos {
+		color: $cinza-sc;
+		font-size: 32px;
+		border: none;
+		background: #f5f5f5;
+	}
+	& button.mais-filhos {
+		color: $branco-sc;
+		background: $rosa-sc;
+		border: none;
+		font-size: 32px;
+		border-radius: 50%;
+		width: 50px;
+	}
+}
+
+div#div-filhos0 {
+	display: none;
+}
+
+div.cadastro-filhos {
+	background: #fff;
+}
+
+ label {
+    width: 100%;
+}
+
+ form.form-custom .input-field  label {
+   color: $azul-sc;
+   font-size: 0.8rem;
+   -webkit-transform: translateY(-140%);
+   -moz-transform: translateY(-140%);
+   -ms-transform: translateY(-140%);
+   -o-transform: translateY(-140%);
+   transform: translateY(-140%);
+ }
+
+ form.form-custom input[type="checkbox"] + label {
+ 	-webkit-transform: translateY(0) !important;
+ 	-moz-transform: translateY(0) !important;
+ 	-ms-transform: translateY(0) !important;
+ 	-o-transform: translateY(0) !important;
+ 	transform: translateY(0) !important;
+ 	font-size: 16px;
+ }
+
+ form.form-custom .input-field input[type=text]:focus + label {
+   color: $azul-sc;
+ }
+
+ form.form-custom .input-field input[type=checkbox] label {
+   color: $cinza-sc;
+ }
+
+ form.form-custom .input-field input {
+   border-bottom: 1px solid $azul-sc;
+   box-shadow: 0 1px 0 0 $azul-sc;
+ }
+
+ form.form-custom .input-field input[type=text]:focus {
+   border-bottom: 1px solid $azul-sc;
+   box-shadow: 0 1px 0 0 $azul-sc;
+ }
+
+ form.form-custom .input-field .prefix.active {
+   color: $azul-sc;
+ }
+
+ form.form-custom .dashed-blue:after{
+   content: "";
+   display: block;
+   border-bottom: 2px dashed $azul-sc;
+   position: relative;
+   top: -14px;
+ }
+
+ .incorreto:before {
+ 	content: "x";
+ 	bottom: 30px;
+ 	position: absolute;
+ 	right: 27px;
+ 	color: #ff0000;
+ 	font-size: 24px;
+ }
+
+ .correto:before {
+ 	content: "✔";
+ 	bottom: 30px;
+ 	position: absolute;
+ 	right: 20px;
+ 	color: $verde-sc;
+ 	font-size: 24px;
+ }
+
+form.form-custom .input-field input.invalid {
+	border-bottom: 1px solid #F44336;
+    box-shadow: 0 1px 0 0 #F44336;
+	& label:before{
+	content: 'x';
+	}
+}
+
+form.form-custom .input-field input.invalid + label {
+	color: #F44336;
+}
+
+form.form-custom .input-field input.valid {
+	border-bottom: 1px solid $verde-sc;
+    box-shadow: 0 1px 0 0 $verde-sc;
+}
+
+form.form-custom .input-field input.valid + label {
+	color: $verde-sc;
+}
+
+form.form-custom label:after {
+	top: 66px !important;
+}
+
+.dashed-red:after {
+	content: "";
+	display: block;
+	border-bottom: 2px dashed $vermelho-sc;
+	position: relative;
+	top: -14px;
+}
+
+.dashed-green:after {
+	content: "";
+	display: block;
+	border-bottom: 2px dashed #00c7a4;
+	position: relative;
+	top: -14px;
+}
+
+span.invalid:after {
+	content: 'x';
+	color: red;
+}
+
+		// Radio Buttons
+
+ul.radio-lista {
+    list-style: none;
+}
+li.radio-item {
+    display: inline-block;
+    margin-right: 15px;
+}
+form.form-custom input[type=radio] {
+    display: none;
+}
+label.radio-label {
+	color: $cinza-sc;
+	background: lighten($cinza-sc, 30%);
+    cursor: pointer;
+    border-radius: 16px;
+}
+input[type=radio]:checked + label {
+    background: $rosa-sc;
+    color: $branco-sc;
+}
+
+// Novo Projeto
+
+div.escolha-compra {
+	position: relative;
+	height: 100vh;
+	width: 428px;
+	z-index: 2;
+}
+
+div.icone-voltar {
+	display: none;
+	position: absolute;
+	float: left;
+	font-size: 10px;
+	bottom: 70px;
+	left: 533px;
+	height: 20px;
+	line-height: 2;
+	width: 150px;
+	transition: .4s;
+}
+
+div.transicao-lateral {
+	background: url('../img/transicao-peq-vertical.svg') repeat-y;
+	height: 100vh;
+	width: 16px;
+	position: relative;
+	left: 102%;
+}
+
+div.div-pecas {
+	background: $azul-sc;
+	background-image: linear-gradient(-135deg, rgba(7,63,93,0.00) 0%, #1972A1 100%);
+	height: 50vh;
+	position: absolute;
+	width: 100%;
+	right: 0px;
+	// min-width: 1280px;
+}
+
+div.div-colecao {
+	background: $amarelo-sc;
+	background-image: linear-gradient(-179deg, rgba(141,49,0,0.00) 0%, rgba(141,49,0,0.05) 100%);
+	border-top: 1px solid #F3E262;
+	height: 50vh;
+	position: absolute;
+	width: 100%;
+	right: 0px;
+	bottom: 0;
+	// min-width: 1280px;
+}
+
+div.peca-img img {
+	position: relative;
+	top: -60px;
+	right: -23px;
+}
+
+img.mockup-pecas {
+	max-height: 45vh !important;
+	position: absolute;
+	top: -1px;
+	right: 0;
+}
+
+a.btn-peca {
+	padding: 28px 3rem;
+	line-height: 0px !important;
+}
+
+a.btn-colecao {
+	transition: .1s;
+	box-shadow: 0 64px 64px 0 rgba(155,92,22,0.50), 
+				0 32px 32px 0 rgba(155,92,22,0.50),
+				0 16px 16px 0 rgba(155,92,22,0.35),
+				0 8px 8px 0 rgba(155,92,22,0.35),
+				0 4px 4px 0 rgba(155,92,22,0.35);
+	&:hover{
+		box-shadow: 0 8px 8px 0 rgba(155,92,22,0.35),
+					0 4px 4px 0 rgba(155,92,22,0.35);
+	}
+}
+
+div.colecoes {
+	color: #883418;
+}
+
+div.circle-projeto {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	background: $branco-sc;
+}
+
+div.concluido {
+	position: relative;
+	background-color: $rosa-sc;
+	width: 60%;
+	height: 60%;
+	border-radius: 50%;
+	left: 10px;
+	top: 10px;
+}
+
+div.barra-projeto {
+	position: relative;
+    width: 9%;
+    height: 17px;
+    top: 17px;
+    margin-left: -4px;
+    margin-right: -5px;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    background: #fcfcfc;
+}
+
+div.barra-done {
+	position: relative;
+	background-color: $rosa-sc;
+	width: 80%;
+	height: 63%;
+	top: 3px;
+	right: 10px;
+	border-radius: 32px;
+}
+
+div.barra-done-2 {
+	position: relative;
+	background-color: $rosa-sc;
+	width: 160%;
+	height: 63%;
+	top: 3px;
+	right: 10px;
+	border-radius: 32px;
+}
+
+div.descricao-produto {
+	position: relative;
+	top: -90px;
+}
+
+div.qte {
+	position: relative;
+    top: -90px;
+}
+
+button.quero-btn {
+	position: relative;
+	top: -90px;
+}
+
+span.menu-projeto {
+	top: 16px;
+	left: 686px;
+	position: absolute;
+}
+
+
+// Coleções
+
+section.lista-colecoes {
+	background-image: linear-gradient(-135deg, rgba(141,49,0,0.00) 0%, 
+		              rgba(141,49,0,0.05)100%);
+	margin-left: 490px;
+	min-width: 1080px;
+}
+
+div.busca-colecao {
+	&:after {
+		content: "";
+		display: block;
+		border-bottom: 2px dotted #fff;
+		width: 100%;
+		margin: -15px auto;
+	}
+		i.icon-search {
+			position: relative;
+			top: 48px;
+		}
+}
+
+div.busca-colecao input[type=text] {
+	border-bottom: 1px solid #fff;
+	color: white;
+	text-align: center;
+}
+
+div.produto-colecao > a > img {
+	height: 90px;
+	width: 90px;
+}
+
+img.colecao-img {
+	height: 128px;
+	max-width: 100%;
+	display: block;
+	margin: 0 auto;
+}
+
+// div.card-colecao {
+// 	display: block;
+// 	position: relative;
+// 	box-shadow: 0 4px 4px 0 rgba(16, 55, 101, 0.35);
+// }
+
+span.back-colecao {
+	position: absolute;
+	right: 16px;
+	top: 16px;
+}
+
+.texto-produto {
+	font-size: 14px;
+	letter-spacing: 0.1px;
+	line-height: 16px;
+}
+
+.numero-pecas {
+	font-size: 12px;
+	color: #E4E4E4;
+	line-height: 16px;
+}
+
+img.back-icon {
+	position: absolute;
+	bottom: 16px;
+	left: 490px;
+	width: 72px;
+    height: 72px;
+    padding: 15px;
+    box-shadow: 0 64px 64px 0 rgba(155, 92, 22, 0.5), 
+    			0 32px 32px 0 rgba(155, 92, 22, 0.5), 
+    			0 16px 16px 0 rgba(155, 92, 22, 0.35), 
+    			0 8px 8px 0 rgba(155, 92, 22, 0.35), 
+    			0 4px 4px 0 rgba(155, 92, 22, 0.35);
+}
+
+// inventario
+
+.adicionar-btn {
+	letter-spacing: 0.1px !important;
+	padding: 0 1em !important;
+}
+
+div.inventario-contador {
+	background: transparent;
+	border-radius: 30px;
+	width: 128px;
+}
+div.inventario-contador button {
+		color: $branco-sc;
+		font-size: 32px;
+		border: none;
+		background: transparent;
+}
+div.inventario-contador input[type=text] {
+    width: 35%;
+    height: 1em;
+    border: none !important;
+    color: $branco-sc !important;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 11px;
+}
+
+div.contador-personalizar {
+	background: $branco-sc;
+	border-radius: 30px;
+	border: thick dotted $rosa-sc;
+	cursor: pointer;
+	& button {
+		color: $rosa-sc;
+		font-size: 16px;
+		border: none;
+		background: $branco-sc;
+		padding-bottom: 9px;
+	}
+}
+
+div.container-inventario {
+	background-color: #fff;
+	min-height: 100px;
+	width: 248px;
+	box-shadow: 0 4px 4px 0 rgba(0,0,0,0.35);
+}
+
+img.img-card {
+	max-width: 100%;
+	height: auto;
+	margin-top: -100px;
+}
+
+// ============ Materialize ================
+
+// Buttons
+
+.btn {
+  border: $button-border;
+  display: inline-block;
+  line-height: $button-height;
+  padding: $button-padding;
+  vertical-align: middle;
+  // Gets rid of tap active state
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: .5px;
+  transition: .2s ease-out;
+  cursor: pointer;
+}
+
+// Chip
+
+.chip {
+  display: inline-block;
+  height: 32px;
+  font-size: 16px;
+  font-weight: 500;
+  color: $branco-sc;
+  line-height: 32px;
+  padding: 0 12px;
+  border-radius: 16px;
+  background-color: $rosa-sc;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+// DropDown
+
+.dropdown-content {
+  @extend .z-depth-1;
+  margin-top: 50px;
+  margin-left: 7px;
+  display: none;
+  min-width: 100px;
+  max-height: 650px;
+  overflow-y: auto;
+  opacity: 0;
+  position: absolute;
+  z-index: 999;
+  will-change: width, height;
+  background-color: $branco-sc;
+  li {
+    clear: both;
+    color: $off-black;
+    cursor: pointer;
+    min-height: 50px;
+    line-height: 1.5rem;
+    width: 100%;
+    text-align: left;
+    text-transform: none;
+    & > a, & > span {
+      font-size: 16px;
+      display: block;
+      line-height: 22px;
+      padding: ((50px - 22) / 2) 16px;
+    }
+    & > span > label {
+      top: 1px;
+      left: 0;
+      height: 18px;
+    }
+    & > a > i {
+      height: inherit;
+      line-height: inherit;
+      float: left;
+      margin: 0 24px 0 0;
+      width: 24px;
+    }
+  }
+}
+
+// Light
+.light { 
+	font-weight: 300; 
+}

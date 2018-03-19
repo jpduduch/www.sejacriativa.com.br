@@ -1,0 +1,39 @@
+.transicao {
+	&-rosa{
+		background: url('../img/rosa.svg') repeat;
+		height: 100px;
+		margin-top: -100px;
+		&-invertida {
+				background: url('../img/rosa-invertido.svg') repeat;
+				height: 100px;
+		}
+	}
+	&-amarelo{
+		background: url('../img/amarelo.svg') repeat;
+		height: 100px;
+		margin-top: -100px;
+		&-invertida {
+				background: url('../img/amarelo-invertido.svg') repeat;
+				height: 100px;
+		}
+	}
+	&-azul{
+		background: url('../img/azul.svg') repeat;
+		height: 100px;
+		margin-top: -100px;
+		&-invertida {
+				background: url('../img/azul-invertido.svg') repeat;
+				height: 100px;
+				margin-top: -50px;
+		}
+	}
+	&-violeta{
+		background: url('../img/violeta.svg') repeat;
+		height: 100px;
+		margin-top: -100px;
+		&-invertida {
+				background: url('../img/violeta-invertido.svg') repeat;
+				height: 100px;
+		}
+	}
+}

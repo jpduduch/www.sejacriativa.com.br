@@ -1,0 +1,280 @@
+@media #{$medium-and-down}{
+    body:after{
+        content: '';
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(black, 0.5);
+        position: fixed;
+        top: 0;
+        pointer-events: none;
+        opacity: 0;
+    }
+}
+
+
+header nav{
+    width: 100%;
+    background-color: $azul-sc;
+    height: 44px;
+    display: flex;
+
+    .container-itens-menu{
+        position: relative;
+        z-index: 1;
+        height: 21rem;
+
+        @media #{$medium-and-down} {
+            position: fixed;
+            bottom: 26rem;
+            right: 10rem;
+            display: block;
+            height: initial;
+
+            span.chip{
+                top: -0.5rem;
+            }
+        }
+    }
+
+    button, a{
+        &.menu, &.help{
+            width: 4.5rem;
+            height: 4.5rem;
+            min-width: 4.5rem;
+            border-radius: 50%;
+            background-color: $branco-sc;
+            border: none;
+            display: block;
+            margin: 2.5rem 5.5rem;
+            padding: 0.025rem 1rem;
+            position: relative;
+            
+            @extend .sombra-profunda-azul;
+
+            span.chip{
+                opacity: 0;
+                position: absolute;
+                bottom: 0.025rem;
+                padding: 0.25rem 0.5rem;
+
+                @media #{$medium-and-down}{
+                    bottom: initial;
+                    top: 0.025rem;
+                }
+            }
+        }
+
+        &.menu {            
+
+            @media #{$medium-and-down}{
+                position: fixed;
+                bottom: 0rem;
+                right: 0rem;
+                z-index: 1;
+                margin: 0.5rem;
+                box-shadow: $sombra-profunda-on !important;
+            }
+        }
+
+        &.help{
+            padding: 1.5rem;
+            @media #{$medium-and-down} {
+                display: none;
+            }
+        }
+    }
+
+    .chip{
+        margin: 0;
+    }
+
+    .dropdown-menu{
+        position: absolute;
+        left: 6.5rem;
+        top: 7rem;
+        opacity: 1;
+
+        li{
+            position: relative;
+            display: block;
+            transform: scale(0);
+
+            a{
+                display: block;
+                margin-top: 1rem;
+                width: 2.25rem;
+                height: 2.25rem;
+                background-color: $branco-sc;
+                border: 1px solid $azul-sc;
+                border-radius: 50%;
+                box-shadow: $sombra-profunda-off;
+                overflow: hidden;
+
+                img{
+                    object-fit: cover;
+                    object-position: center;
+                    margin: 0.5rem;
+
+                    &.avatar-menu{
+                        margin: 0;
+                        height: 2.25rem;
+                    }
+                }
+            }
+
+            span{
+                position: absolute;
+                left: 1.5rem;
+                top: 1.5rem;
+                padding: 0 0.5rem;
+                white-space: nowrap;
+                pointer-events: none;
+                @extend %no-select;
+                transform: scale(0);
+                transform-origin: left;
+                
+                @media #{$medium-and-down}{
+                    left: initial;
+                    right: 1.5rem;
+                }
+            }
+        }
+
+
+    }
+    
+    &:after{
+        @extend %exibir-pseudo-elemento;
+        background-image: url("../img/transicoes/transicao-azul-invertida.svg");
+        height: 100px;
+        width: 100%;
+        position: absolute;
+        top: 44px;
+        z-index: -1;
+    }
+
+    .logo{
+        display: block;
+        margin: 2.5rem auto;
+        max-width: 248px;
+    }
+}
+
+footer{
+    &:before{
+        @extend %exibir-pseudo-elemento;
+        background-image: url("../img/transicoes/transicao-azul.svg");
+        position: absolute;
+        margin-top: 0;
+        width: 100%;
+        height: 100px;
+        margin-top: -100px;
+    }
+
+    position: relative;
+    padding-bottom: 2rem;
+    background-color: $azul-sc;
+    color: $branco-sc;
+    margin-top: 12rem;
+
+    .logo-container-footer{
+        padding: 0 4rem;
+    }
+
+    form.newsletter{
+        display: block;
+
+        @media #{$small-and-down}{
+            padding: 0 2rem !important;
+        }
+
+        legend{
+            font-weight: $bold;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        input[type=submit]{
+            background-color: $branco-sc;
+            color: $azul-sc;
+            box-shadow: $sombra-profunda-azul-on;
+            margin-bottom: 3rem;
+            &:hover{
+                box-shadow: $sombra-profunda-azul-off;
+            }
+        }    
+    }
+
+    #links-uteis{
+
+        h6{
+            color: $branco-sc;
+            text-align: left;
+            display: block;
+            margin-left: 0;
+        }
+
+        a{
+            text-transform: initial;
+            color: $branco-sc;
+            text-align: left;
+            font-weight: $regular;
+            display: block;
+            line-height: 1rem;
+            margin: 1rem 0;
+        }
+    }
+
+    h6{
+        color: $branco-sc;
+        text-align: left;
+        margin-left: 12.5%;
+        @media #{$small-and-down} {
+            display: none;
+        }
+    }
+    #redes-sociais{
+        @media #{$large-and-up} {
+            margin-left: 12.5%;
+            padding: 0;
+            width: 37.5%;
+        }
+        display: flex;
+        justify-content: space-between;
+        vertical-align: middle;
+        width: 100%;
+        padding: 0 3rem;
+
+    }
+
+    p{
+        &:before{
+            @extend %exibir-pseudo-elemento;
+            width: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            top: 0;
+            border-bottom: 1px solid $branco-sc;
+            opacity: 0.8;
+            @media #{$medium-and-up} {
+                display: none;
+            }
+        }
+        color: $branco-sc;
+        font-weight: $regular;
+        text-align: center;
+        margin-bottom: -1rem;
+        position: relative;
+        padding-top: 1rem;
+    }
+}
+
+
+form, .logo-footer, #links-uteis, #redes-sociais{
+    padding: 0 2rem;
+}
+
+
+

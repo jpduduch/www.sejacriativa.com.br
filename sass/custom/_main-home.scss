@@ -1,0 +1,378 @@
+%transicao{
+	position: absolute;
+	bottom: 0;
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100px;
+}
+
+.facebook{
+	@extend %button-cta;
+	background-color: $azul-facebook;
+	margin-top: 1rem;
+	text-transform: uppercase !important; 
+
+	img{
+		margin-left: 0.5rem;
+		margin-bottom: -0.16rem;
+	}
+}
+
+// grafismos que vão antes de alguns títulos
+@mixin icones-sejacriativa-small($largura-mobile, $largura-desktop){
+	@extend %exibir-pseudo-elemento, %centraliza-horizontal;
+	width: $largura-mobile;
+
+	@media #{$large-and-up} {
+		width: $largura-desktop;
+	}	
+	background-image: url("../img/creative-small.svg");
+	height: 4.5rem;
+	background-repeat: no-repeat;
+}
+
+header, section, footer{
+	position: relative;
+}
+
+main.home+footer{
+	margin-top: 0;
+}
+
+header:not(#landing-page){
+	margin-bottom: 8rem;
+}
+
+#funcionalidades-chave, #storytelling, #conversao{
+	padding-bottom: 14rem !important;
+	text-align: center;
+	
+
+	a{
+		text-transform: initial;
+	}
+}
+// header da home
+#landing-page{
+	// corrige o bug de exibição caso por alguma razão o usuário acesse o site por um dispositivo mobile no modo paisagem
+	min-height: 900px;
+
+	width: 100%;
+	height: calc(100vh + 100px);
+	position: relative;
+	background-color: $azul-sc;
+	background-image: url("../img/home-bg.jpg");
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+
+	&:after{
+		@extend %transicao;
+		background-image: url("../img/transicoes/transicao-roxa.svg");
+	}
+}
+
+// apagar estas propriedades quando for cuidar dos cards remanescentes da pagina
+// #card-login, #nova-usuaria{
+// 	display: none;
+// }
+
+// -----------------------
+
+
+// área de fundo violeta da home
+#funcionalidades-chave{
+	// width: 100%;
+	background-color: $violeta-sc;
+	background-image: linear-gradient(rgba($violeta-sc, 0) 0%, rgba(#4B256F, 0.1) 100%);
+
+	h2,h3{
+		color: $amarelo-sc;
+		margin-bottom: 1.5rem;
+	}
+
+	&:after{
+		@extend %transicao;
+		background-image: url("../img/transicoes/transicao-branca.svg");
+	}
+	
+	.funcionalidade-principal{
+		padding: 0 2rem;
+
+		figure{
+			margin-bottom: 3rem;
+
+			img{
+				@media #{$medium-and-up}{
+					margin-top: 10rem;
+					padding: 2rem 0;
+				}
+			}
+		}
+
+		figcaption{
+			
+			// @extend %col, %s16, %l4, %offset-l4;
+			&:before{
+				@include icones-sejacriativa-small(90%, 45%);
+			}
+			
+			@media #{$medium-and-up}{
+				margin-top: 30%;
+			}
+
+			h2{
+				line-height: 3rem;
+				margin-top: 0;
+				margin-bottom: 2.5rem;
+			}
+
+			p{
+				color: $branco-sc;
+				font-weight: $regular;
+			}
+
+			a{
+				@extend %button-secondary;
+				margin-top: 1.5rem;
+				border: 2px dotted $branco-sc;
+
+				color: $branco-sc !important;
+			}
+		}
+	}
+
+	.funcionalidade-secundaria{
+		margin-top: 6.5rem;
+		padding: 0 2rem !important;
+		// fazer com que a margem de offset-l2 não seja aplicada nos demais elementos além do primeiro
+		& ~ .funcionalidade-secundaria{
+			margin-left: 0 !important;
+		}
+		
+		@media #{$large-and-up}{
+			margin-top: 8.5rem;
+			margin-bottom: 8.5rem;
+
+			img{
+				max-height: 268px;
+			}
+		}
+		
+
+		p{
+			color: $branco-sc;
+		}
+
+		// @for $i from 1 through 3{
+		// 	.funcionalidade-secundaria:nth-type(#{$i}){
+		// 		margin-top: $i * 9.5rem;
+		// 	}
+		// }
+	}
+}
+
+
+
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+#storytelling{
+	background-color: $branco-sc;
+	
+	h2, h3, a{ color: $rosa-sc;	}
+
+	&:after{
+		@extend %transicao;
+		background-image: url("../img/transicoes/transicao-rosa.svg");
+	}
+
+	#video-section{
+		padding: 0 2rem;
+
+		@media #{$large-and-up} {
+			padding-top: 10rem;
+		}
+
+		img{
+			margin-bottom: -20%;
+			@media #{$medium-and-up} {
+				margin-bottom: -8%;
+			}
+		}
+
+		.video-container{
+			padding: 0;
+			border-radius: 1rem;
+			overflow: hidden;
+			box-shadow: $sombra-profunda-on;
+		}
+
+		video{
+			margin-bottom: -2.5%;
+			filter: blur(3px);
+			width: 100%;
+		}
+	}
+
+	#video-caption{
+		h2{
+			&:before{
+				@include icones-sejacriativa-small(90%, 60%);
+				margin-top: 5rem;
+				@media #{$large-and-up} {
+					margin-top: -3rem;
+				}
+			}
+		}
+	}
+
+	#mockups, #depoimentos{
+
+		a{
+			text-transform: initial;
+		}
+	}
+
+	#mockups{
+		position: relative;
+
+		
+		@media #{$large-and-up} {
+			margin-top: 6rem;
+		}
+		
+		.img-container-mockup{
+			float: right;
+			margin-top: 2.5rem;
+			width: 150%;
+			@media #{$large-and-up}{
+				width: auto;
+				margin-left: 40%;
+			}
+			
+			img{
+				@extend .img-container-mockup;
+			}
+		}
+		
+		.mockup-caption{
+			padding: 0 2rem;
+
+			@media #{$large-and-up} {
+				    position: absolute;
+				    top: 50%;
+				    transform: translateY(-50%);
+				    padding: 4rem;
+				    width: auto;
+				    margin-right: 60%;
+				    min-width: 550px;
+			} 
+
+			h2{
+				&:before{
+					@include icones-sejacriativa-small(100%, 25%);
+					min-width: 250px;
+					@media #{$small-and-down}{
+						margin-top: 6rem;
+					}
+				}
+			}
+		}
+	}
+	
+	#depoimentos{
+		margin-top: 7rem;
+		padding: 0 2rem;
+
+		h3 + p{
+			margin-bottom: 1.5rem;
+		}
+
+		.usuarias-instagram-container{
+			max-width: 1920px;
+		}
+		.usuarias-instagram{
+			margin-top: 2rem;
+			min-height: 416px;
+			
+			figure{
+				text-align: right;
+
+				img{
+					width: 100%;
+					height: calc(100vw - 4rem);
+					@media #{$large-and-up} {
+						height: 10vw;
+					}
+					margin-bottom: -1rem;
+					object-fit: cover;
+					object-position: center;
+					border-radius: 1rem;
+					box-shadow: $sombra-profunda-on;
+					
+					&:hover{
+						box-shadow: $sombra-profunda-off;
+					}
+				}
+				span.nome-user-instagram{
+					margin-right: 1rem;
+					padding: 0.125rem 1rem;
+					background-color: $rosa-sc;
+					color: $branco-sc;
+					border-radius: 1rem;
+					font-weight: $regular;
+				}
+			}
+		}
+	}
+}
+
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+#conversao{
+	background-color: $rosa-sc;
+	overflow-y: hidden;
+	
+	.img-container{
+		padding: 0 2rem;
+		@media #{$large-and-up} {
+			margin-top: 5rem;
+		}
+	}
+
+	.conversao-caption{
+		padding: 0 2rem;
+		
+		@media #{$large-and-up} {
+			margin-top: 20rem;
+		}
+
+		h3{
+			color: $amarelo-sc;
+		}
+
+		p, a{
+			color: $branco-sc;
+			text-decoration: none;
+			
+			#cidade-usuario{
+				font-weight: $bold;
+			}
+		}
+
+		form{
+			padding: 0;
+			margin-top: 4.5rem;
+		}
+
+		input[type=submit]{
+			background-color: $branco-sc;
+			color: $rosa-sc;
+
+			&:hover{
+				box-shadow: $sombra-profunda-rosa-on;
+			}
+		}
+	}
+}

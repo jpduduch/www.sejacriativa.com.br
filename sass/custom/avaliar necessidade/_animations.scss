@@ -1,0 +1,105 @@
+// Sliding effects 
+
+.animado {
+  animation-duration: 1.7s;
+  animation-fill-mode: both;
+}
+
+  // -- Esquerda --
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+    display: block;
+  }
+
+  to {
+    transform: translate3d(-500%, 0, 0);
+    visibility: hidden;
+  }
+}
+
+.slideInLeft {
+  animation-name: slideInLeft;
+}
+
+@keyframes slideInLeftInverse {
+  from {
+    transform: translate3d(500%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+  // -- Esquerda Invertida --
+
+.slideInLeftInverse {
+  animation-name: slideInLeftInverse;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(500%, 0, 0);
+    visibility: hidden;
+  }
+}
+
+  // -- Direita --
+
+.slideInRight {
+  animation-name: slideInRight;
+}
+
+@keyframes slideInRightInverse {
+  from {
+    transform: translate3d(-500%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+  // -- Direita invertida --
+
+.slideInRightInverse {
+  animation-name: slideInRightInverse;
+}
+
+#logo {
+	animation-delay: .3s;
+}
+
+//  Botão Subotal Menu 
+
+@keyframes slideDown {
+  to {
+    top: -50px;
+  }
+}
+
+.slideDown {
+    animation-name: slideDown;
+    animation-duration: .5s !important;
+}
+
+@keyframes slideUp {
+  from {
+    top: -50px;
+  }
+}
+
+.slideUp {
+    animation-name: slideUp;
+    animation-duration: .5s !important;
+}
